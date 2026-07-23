@@ -31,7 +31,7 @@ public class LoginController {
 
         if ( usuarioCadastrado.equalsIgnoreCase(usuario.getText()) && senhaCadastrada.equals(senha.getText())){
             System.out.println("Login efetuado com Sucesso");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage)  ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);

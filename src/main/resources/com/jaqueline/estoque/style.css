@@ -1,0 +1,146 @@
+/* Fundo principal da aplicação */
+.main-container {
+    -fx-background-color: #FCE4DC;
+}
+
+/* Painel lateral (Menu) */
+.sidebar {
+    -fx-background-color: #E8A3AC;
+}
+
+/* Estilo padrão dos botões do menu */
+.menu-button {
+    /* Fundo completamente transparente */
+    -fx-background-color: transparent;
+
+    /* Remove bordas padrão do botão */
+    -fx-border-color: transparent;
+
+    /* Cor do texto e dos ícones */
+    -fx-text-fill: #3D3331;
+
+    /* Alinhamento à esquerda para manter o visual limpo */
+    -fx-alignment: CENTER-LEFT;
+
+    /* Espaçamento interno (padding) */
+    -fx-padding: 10px 15px;
+
+    /* Fonte */
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+
+    /* Muda o ponteiro do mouse para a mãozinha */
+    -fx-cursor: hand;
+
+}
+
+/* Efeito ao passar o mouse ou selecionar */
+.menu-button:hover, .menu-button:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #6E9BB3;
+    -fx-border-width: 0 0 0 4px; /* Barra lateral azul */
+}
+
+/* Títulos */
+.title-text {
+    -fx-text-fill: #593630;
+    -fx-font-weight: bold;
+}
+
+
+
+
+
+
+
+.search-field {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D4C5C3;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 12px;
+    -fx-prompt-text-fill: #9C9C9C;
+}
+
+.search-field:focused {
+    -fx-border-color: #6E9BB3;
+    -fx-border-width: 1.5px;
+}
+
+/* =========================================================
+   BOTÕES DE AÇÃO
+   ========================================================= */
+/* Botão Destaque: Adicionar */
+.btn-primary {
+    -fx-background-color: #8DAFB6;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-padding: 8px 16px;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #7A9CA3;
+}
+
+/* Botões Secundários: Editar, Remover, Voltar */
+.btn-secondary {
+    -fx-background-color: #EFE7E5;
+    -fx-text-fill: #3D3331;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-padding: 8px 16px;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #E2D7D4;
+}
+
+/* =========================================================
+   ESTILIZAÇÃO DA TABELA (TableView)
+   ========================================================= */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E2D7D4;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* Cabeçalho das colunas */
+.table-view .column-header-background {
+    -fx-background-color: #E8A3AC;
+    -fx-background-radius: 8px 8px 0 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 35px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #593630;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* Linhas da Tabela */
+.table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #F2EBE9 transparent;
+}
+
+/* Linhas alternadas (efeito zebra suave) */
+.table-row-cell:odd {
+    -fx-background-color: #FAF5F4;
+}
+
+/* Linha selecionada na tabela */
+.table-row-cell:filled:selected {
+    -fx-background-color: #D8CFDB;
+}
+
+.table-row-cell:filled:selected .text {
+    -fx-fill: #3E3E3E;
+    -fx-font-weight: bold;
+}
