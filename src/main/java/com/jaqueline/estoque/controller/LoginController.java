@@ -1,15 +1,11 @@
-package com.jaqueline.estoque;
+package Controller;
 
+import com.jaqueline.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.TextFlow;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -30,13 +26,8 @@ public class LoginController {
     protected void aoApertarBotao(ActionEvent event) throws IOException {
 
         if ( usuarioCadastrado.equalsIgnoreCase(usuario.getText()) && senhaCadastrada.equals(senha.getText())){
-            System.out.println("Login efetuado com Sucesso");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
-            Scene scene = new Scene(loader.load());
-            Stage stage = (Stage)  ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.setTitle("home");
-            stage.show();
+
+            GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml", "Sistema de Estoque - login");
 
 
 
