@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jaqueline.estoque.MenuController">
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jaqueline.estoque.controller.MenuController">
    <left>
-      <VBox prefHeight="600.0" prefWidth="269.0" styleClass="sidebar" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="600.0" prefWidth="269.0" style="-fx-background-color: #fcd7da;" styleClass="sidebar" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
             <Label prefHeight="28.0" prefWidth="105.0" styleClass="botao-menu" stylesheets="@style.css" text="Estoque">
                <font>
@@ -49,7 +49,7 @@
       </VBox>
    </left>
    <center>
-      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="447.0" style="-fx-background-color: #ff90ab;" styleClass="main-container" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="600.0" prefWidth="447.0" style="-fx-background-color: #ffc2ce;" styleClass="main-container" stylesheets="@style.css" BorderPane.alignment="CENTER">
          <children>
             <Label contentDisplay="CENTER" styleClass="title-text" text="Bem-Vindo(a)!" textAlignment="CENTER" textFill="#593630">
                <font>

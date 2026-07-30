@@ -1,4 +1,16 @@
-package Controller;
+package com.jaqueline.estoque.controller;
+
+import com.jaqueline.estoque.util.GerenciadorTela;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+
+import java.io.IOException;
+
 
 public class RelatorioController {
+
+    @FXML
+    protected void aoVoltarAoMenu(ActionEvent event) throws IOException{
+        GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml","Sistema de Estoque - Menu");
+    }
 }

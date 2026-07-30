@@ -1,13 +1,18 @@
-package Controller;
+package com.jaqueline.estoque.controller;
 
 import com.jaqueline.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class LoginController {
     @FXML
@@ -19,18 +24,22 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-    private final String usuarioCadastrado = "Jaqueline@gmail.com";
-    private final String senhaCadastrada = "986861";
+
+    private Map<String, String> usuariosCadastrados = Map.of(
+           "admin@gmail.com", "admin",
+           "jaqueline@gmail.com", "986861",
+           "funci@gmail.com", "1234"
+   );
 
     @FXML
     protected void aoApertarBotao(ActionEvent event) throws IOException {
 
-        if ( usuarioCadastrado.equalsIgnoreCase(usuario.getText()) && senhaCadastrada.equals(senha.getText())){
+        String usuarioDigitado = usuario.getText().toLowerCase();
+        String senhaDigitada = senha.getText();
 
-            GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml", "Sistema de Estoque - login");
+        if ( usuariosCadastrados.containsKey(usuarioDigitado) && usuariosCadastrados.get(usuarioDigitado).equals(senhaDigitada) ){
 
-
-
+            GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml", "Sistema de Estoque -  Menu");
 
             erroDados.setVisible(false);
         } else {
