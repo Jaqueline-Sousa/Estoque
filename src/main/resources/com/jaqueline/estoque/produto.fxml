@@ -53,12 +53,12 @@
             </VBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="botaoCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #DBCEC3;" text="Cancelar">
+                  <Button fx:id="botaoCancelar" mnemonicParsing="false" onAction="#cancelar" minHeight="25.0" minWidth="66.0" style="-fx-background-color: #DBCEC3;" text="Cancelar" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="botaoSalvar" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #DBCEC3;" text="Salvar">
+                  <Button fx:id="botaoSalvar" mnemonicParsing="false" onAction="#salvar" minHeight="35.0" minWidth="114.0" style="-fx-background-color: #DBCEC3;" text="Salvar" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>

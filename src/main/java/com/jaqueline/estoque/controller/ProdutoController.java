@@ -28,17 +28,22 @@ public class ProdutoController {
     @FXML
     private Button botaoSalvar;
 
+    @FXML
+    private Button botaoCancelar;
+
     private final EstoqueDAO dadosEstoque = EstoqueDAO.getInstancia();
 
     private Produto produtoEmEdicao;
 
-    public void preecherParaEdicao( Produto produto ){
+    public void preencherParaEdicao( Produto produto ){
         this.produtoEmEdicao = produto;
         campoNome.setText(produto.getNome());
         campoCategoria.setText(produto.getCategoria());
         campoQuantidade.setText(String.valueOf(produto.getQuantidade()));
         campoPreco.setText(String.valueOf(produto.getPreco()));
         botaoSalvar.setText("Salvar Alterações");
+        botaoCancelar.setText("Cancelar Alteração");
+
     }
 
 
