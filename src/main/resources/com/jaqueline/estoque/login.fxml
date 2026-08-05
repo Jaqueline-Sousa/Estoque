@@ -64,12 +64,17 @@
          <String fx:value="login-button" />
          <String fx:value=".login-button:hover" />
       </styleClass></Button>
-   <Label fx:id="recuperaSenha" onMouseClicked="#aoEsquecerSenha" text="Esqueceu sua senha. Recupere Aqui!" underline="true">
+   <Label fx:id="recuperaSenha" onMouseClicked="#aoEsquecerSenha" text="Esqueceu sua senha. Recupere Aqui!" translateY="-10.0" underline="true">
       <font>
          <Font name="Arial Italic" size="12.0" />
       </font>
       <VBox.margin>
          <Insets />
       </VBox.margin>
+   </Label>
+   <Label fx:id="cadastroNovo" layoutX="259.0" layoutY="425.0" onMouseClicked="#aoCadastrar" text="Ainda não possui cadastro? Cadastre-se agora!" translateY="-20.0" underline="true">
+      <font>
+         <Font name="Arial Italic" size="12.0" />
+      </font>
    </Label>
 </VBox>

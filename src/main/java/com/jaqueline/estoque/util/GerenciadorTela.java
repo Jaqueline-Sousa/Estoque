@@ -1,6 +1,6 @@
 package com.jaqueline.estoque.util;
 
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -25,7 +25,7 @@ public class GerenciadorTela {
     }
 
 
-    public void trocarTela(ActionEvent event, String telaFXML, String titulo) throws IOException {
+    public void trocarTela(Event event, String telaFXML, String titulo) throws IOException {
 
         FXMLLoader  fxmlLoader = new FXMLLoader(getClass().getResource("/com/jaqueline/estoque/"+telaFXML));
         Scene scene = new Scene(fxmlLoader.load());
@@ -36,7 +36,7 @@ public class GerenciadorTela {
 
     }
 
-    public <T> T telaEdicao(ActionEvent event, String telaFXML, String titulo, Consumer<T>abrirEdicao) throws IOException {
+    public <T> T telaEdicao(Event event, String telaFXML, String titulo, Consumer<T>abrirEdicao) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/jaqueline/estoque/"+telaFXML));
         Parent novoRoot = fxmlLoader.load();
         T controller = fxmlLoader.getController();

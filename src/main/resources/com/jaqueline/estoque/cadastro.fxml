@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox alignment="CENTER" prefHeight="450.0" prefWidth="700.0" spacing="20.0" style="-fx-background-color: #dfcccc;" styleClass="login-card" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jaqueline.estoque.controller.CadastroController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox prefHeight="100.0" prefWidth="200.0" />
+
+    <Label fx:id="TextoNaTela" text="Sistema de Estoque - Cadastro de Usuário" textFill="#1b1a1a">
+      <font>
+         <Font name="Californian FB" size="24.0" />
+      </font>
+      <VBox.margin>
+         <Insets bottom="30.0" left="90.0" right="70.0" />
+      </VBox.margin>
+      <graphic>
+         <FontIcon iconColor="#0a0a0a" iconLiteral="mdi2a-account-plus" iconSize="50" />
+      </graphic></Label>
+   <VBox prefHeight="0.0" prefWidth="494.0">
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <children>
+         <TextField fx:id="usuarioCadastrar" prefHeight="44.0" prefWidth="460.0" promptText="Informe Seu Usuário" style="-fx-background-color: #f0f0f0; -fx-border-width: 10; -fx-border-radius: 10; -fx-border-color: #edebe6;">
+            <VBox.margin>
+               <Insets bottom="20.0" left="50.0" right="50.0" />
+            </VBox.margin>
+         </TextField>
+         <Label fx:id="usuarioInvalido" text="É necessário informar um email válido." translateY="-10.0" visible="false">
+            <VBox.margin>
+               <Insets left="60.0" />
+            </VBox.margin>
+         </Label>
+      </children>
+   </VBox>
+   <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+         <PasswordField fx:id="senhaCadastrar"  prefHeight="44.0" prefWidth="460.0" promptText="Informe a sua senha" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-border-color: #edebe6; -fx-border-width: 10;" styleClass="link-text">
+            <VBox.margin>
+               <Insets bottom="20.0" left="50.0" right="50.0" />
+            </VBox.margin>
+         </PasswordField>
+         <Label fx:id="senhaInvalida" text="É necessário informar uma senha valida" translateY="-10.0" visible="false">
+            <VBox.margin>
+               <Insets left="60.0" />
+            </VBox.margin>
+         </Label>
+      </children>
+   </VBox>
+   <PasswordField fx:id="confirmarSenha" onAction="#aoConfirmarCadastro" prefHeight="44.0" prefWidth="460.0" promptText="Confirme sua senha" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-border-color: #edebe6; -fx-border-width: 10;" styleClass="link-text">
+      <VBox.margin>
+         <Insets bottom="20.0" left="50.0" right="50.0" />
+      </VBox.margin>
+   </PasswordField>
+   <TextFlow fx:id="erroSenha" prefHeight="55.0" prefWidth="360.0" visible="false">
+      <VBox.margin>
+         <Insets bottom="-20.0" left="50.0" right="50.0" top="-40.0" />
+      </VBox.margin>
+      <children>
+         <Text fill="#eb1b1b" strokeType="OUTSIDE" strokeWidth="0.0" text="As senhas não coincidem.">
+            <font>
+               <Font name="Arial" size="14.0" />
+            </font>
+         </Text>
+      </children>
+      <padding>
+         <Insets top="10.0" />
+      </padding>
+   </TextFlow>
+    <Button fx:id="btnCadastrar" onAction="#aoConfirmarCadastro" prefHeight="44.0" prefWidth="360.0" style="-fx-background-radius: 10; -fx-background-color: #8ba6ac;" text="Confirmar Cadastro" textFill="#f0f0f0">
+      <font>
+         <Font size="20.0" />
+      </font>
+      <VBox.margin>
+         <Insets right="20.0" />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="2.0" right="20.0" />
+      </padding>
+      <styleClass>
+         <String fx:value="login-button" />
+         <String fx:value=".login-button:hover" />
+      </styleClass></Button>
+   <Label fx:id="acessaLogin" onMouseClicked="#aoAcessarLogin" text="Já possui uma conta? Acesse aqui!" underline="true">
+      <font>
+         <Font name="Arial Italic" size="12.0" />
+      </font>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+   </Label>
+</VBox>

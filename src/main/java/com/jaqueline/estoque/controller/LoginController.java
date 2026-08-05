@@ -1,5 +1,7 @@
 package com.jaqueline.estoque.controller;
 
+import com.jaqueline.estoque.model.Usuario;
+import com.jaqueline.estoque.model.UsuarioDAO;
 import com.jaqueline.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,11 +10,14 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
+
 import java.io.IOException;
 import java.util.Map;
+import java.util.Optional;
 
 public class LoginController {
     @FXML
@@ -24,20 +29,16 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-
-    private Map<String, String> usuariosCadastrados = Map.of(
-           "admin@gmail.com", "admin",
-           "jaqueline@gmail.com", "986861",
-           "funci@gmail.com", "1234"
-   );
-
+private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
     @FXML
     protected void aoApertarBotao(ActionEvent event) throws IOException {
 
         String usuarioDigitado = usuario.getText().toLowerCase();
         String senhaDigitada = senha.getText();
 
-        if ( usuariosCadastrados.containsKey(usuarioDigitado) && usuariosCadastrados.get(usuarioDigitado).equals(senhaDigitada) ){
+        Optional<Usuario> usuarioEncontrado = bdUsuario.buscarPorEmail(usuarioDigitado);
+
+        if (usuarioEncontrado.isPresent() && usuarioEncontrado.get().getSenha().equals(senhaDigitada)) {
 
             GerenciadorTela.getIntancia().trocarTela(event, "menu.fxml", "Sistema de Estoque -  Menu");
 
@@ -47,6 +48,12 @@ public class LoginController {
         }
 
     }
+        @FXML
+    protected void aoCadastrar(MouseEvent event) throws IOException{
+            GerenciadorTela.getIntancia().trocarTela(event, "cadastro.fxml", "Sistema de Estoque - Login");
+        }
+
+
     @FXML
     protected void aoEsquecerSenha(){
         System.out.println("Voce esqueceu! Já não é problema meu.");
