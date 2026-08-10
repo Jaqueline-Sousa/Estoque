@@ -55,7 +55,12 @@ private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
 
 
     @FXML
-    protected void aoEsquecerSenha(){
-        System.out.println("Voce esqueceu! Já não é problema meu.");
+    protected void aoEsquecerSenha() throws IOException {
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/jaqueline/estoque/enviarEmail.fxml"));
+    Scene scene = new Scene(fxmlLoader.load());
+    Stage stage = new Stage();
+    stage.setScene(scene);
+    stage.setTitle("Sistema de Estoque - Esqueceu a senha");
+    stage.show();
     }
 }

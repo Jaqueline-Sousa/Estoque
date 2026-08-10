@@ -48,7 +48,7 @@
    </VBox>
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
-         <PasswordField fx:id="senhaCadastrar"  prefHeight="44.0" prefWidth="460.0" promptText="Informe a sua senha" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-border-color: #edebe6; -fx-border-width: 10;" styleClass="link-text">
+         <PasswordField fx:id="senhaCadastrar" prefHeight="44.0" prefWidth="460.0" promptText="Informe a sua senha" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-border-color: #edebe6; -fx-border-width: 10;" styleClass="link-text">
             <VBox.margin>
                <Insets bottom="20.0" left="50.0" right="50.0" />
             </VBox.margin>
@@ -60,7 +60,7 @@
          </Label>
       </children>
    </VBox>
-   <PasswordField fx:id="confirmarSenha" onAction="#aoConfirmarCadastro" prefHeight="44.0" prefWidth="460.0" promptText="Confirme sua senha" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-border-color: #edebe6; -fx-border-width: 10;" styleClass="link-text">
+   <PasswordField fx:id="confirmaSenha" onAction="#aoConfirmarCadastro" prefHeight="44.0" prefWidth="460.0" promptText="Confirme sua senha" style="-fx-background-color: #f0f0f0; -fx-border-radius: 10; -fx-border-color: #edebe6; -fx-border-width: 10;" styleClass="link-text">
       <VBox.margin>
          <Insets bottom="20.0" left="50.0" right="50.0" />
       </VBox.margin>
