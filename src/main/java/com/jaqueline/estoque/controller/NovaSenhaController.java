@@ -2,8 +2,11 @@ package com.jaqueline.estoque.controller;
 
 import com.jaqueline.estoque.service.RecuperacaoSenhaService;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class NovaSenhaController {
@@ -17,25 +20,35 @@ public class NovaSenhaController {
     @FXML
     private Label senhasDiferentes;
 
-    private RecuperacaoSenhaService service = new RecuperacaoSenhaService();
+    private RecuperacaoSenhaService service;
+
+    public void novaSenha( RecuperacaoSenhaService service){
+        this.service = service;
+    }
 
     @FXML
     protected void aoConfirmarSenha(){
-
        String novaSenhaText = novaSenha.getText();
        String confirmaSenhaText = confirmaSenha.getText();
 
        if ( novaSenhaText.isBlank()){
-           senhasDiferentes.setText("A senha não pode ficar em branco");
+           senhasDiferentes.setText("A nova senha não pode ficar em branco");
            senhasDiferentes.setVisible(true);
            return;
 
        }
-       if ( !novaSenha.equals(confirmaSenhaText)){
+       if ( !novaSenhaText.equals(confirmaSenhaText)){
            senhasDiferentes.setVisible(true);
            return;
        }
-service.redefinirSenha(novaSenhaText);
+        service.redefinirSenha(novaSenhaText);
+       mostrarAlerta("Senha alterada com sucesso!");
         ((Stage) novaSenha.getScene().getWindow()).close();
+    }
+    public void mostrarAlerta( String mensagem){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, mensagem);
+        alert.setHeaderText(null);
+        alert.showAndWait();
+
     }
 }

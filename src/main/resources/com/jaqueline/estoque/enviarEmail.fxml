@@ -8,44 +8,39 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #fcd7da;"
-      stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.jaqueline.estoque.controller.EnviarEmailController">
+<VBox alignment="CENTER" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #fcd7da;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jaqueline.estoque.controller.EnviarEmailController">
+    <children>
+        <Label styleClass="titulo-recuperacao" text="Recuperação de Senha" />
+        <Label alignment="CENTER" layoutX="100.0" layoutY="127.0" prefHeight="42.0" prefWidth="361.0" styleClass="texto-email-recuperacao" text="Informe seu email para receber o código de verificaçao" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+        <TextField fx:id="emailRecuperacao" prefHeight="37.0" prefWidth="340.0" promptText="Email de recuperação" styleClass="title-text">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </TextField>
+        <Label fx:id="emailNaoCadastrado" layoutX="100.0" layoutY="93.0" styleClass="texto-erro" text="Email não cadastrado.Tente Novamente!" textFill="#c60303" visible="false">
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+            <font>
+                <Font name="System Italic" size="8.0" />
+            </font>
+        </Label>
+        <Button mnemonicParsing="false" onAction="#aoValidarEmail" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: #E8A3AC;" text="Enviar">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </Button>
+    </children>
     <padding>
-        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0"/>
+        <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
     </padding>
-    <styleClass>
-        <String fx:value="btn-secondary"/>
-        <String fx:value="table-view"/>
-        <String fx:value="btn-secondary"/>
-    </styleClass>
-    <Label styleClass="titulo-recuperacao" text="Recuperação de Senha"/>
-    <Label alignment="CENTER" layoutX="100.0" layoutY="127.0" prefHeight="42.0" prefWidth="361.0"
-           styleClass="texto-email-recuperacao" text="Informe seu email para receber o código de verificaçao"
-           textAlignment="CENTER" wrapText="true">
-        <font>
-            <Font size="10.0"/>
-        </font>
-    </Label>
-    <TextField fx:id="emailRecuperacao" prefHeight="37.0" prefWidth="340.0" promptText="Email de recuperação"
-               styleClass="title-text">
-        <font>
-            <Font size="18.0"/>
-        </font>
-    </TextField>
-    <Label fx:id="emailNaoCadastrado" layoutX="100.0" layoutY="93.0" styleClass="texto-erro"
-           text="Email não cadastrado.Tente Novamente!" textFill="#c60303" visible="false">
-        <VBox.margin>
-            <Insets top="5.0"/>
-        </VBox.margin>
-        <font>
-            <Font name="System Italic" size="8.0"/>
-        </font>
-    </Label>
-    <Button mnemonicParsing="false" onAction="#aoValidarEmail" prefHeight="30.0" prefWidth="140.0"
-            style="-fx-background-color: #fcd7da;" styleClass="botao" text="Enviar">
-        <VBox.margin>
-            <Insets top="20.0"/>
-        </VBox.margin>
-    </Button>
+   <styleClass>
+      <String fx:value="btn-secondary" />
+      <String fx:value="table-view" />
+      <String fx:value="btn-secondary" />
+   </styleClass>
 </VBox>

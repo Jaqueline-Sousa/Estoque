@@ -35,7 +35,7 @@
 }
 
 /* Efeito ao passar o mouse ou selecionar */
-.menu-button:hover, .menu-button:focused {
+.menu-button:hover, .menu-button:focus {
     -fx-background-color: #FFFFFF;
     -fx-border-color: #6E9BB3;
     -fx-border-width: 0 0 0 4px; /* Barra lateral azul */
@@ -62,7 +62,7 @@
     -fx-prompt-text-fill: #9C9C9C;
 }
 
-.search-field:focused {
+.search-field :focus {
     -fx-border-color: #6E9BB3;
     -fx-border-width: 1.5px;
 }
@@ -131,16 +131,25 @@
 }
 
 /* Linhas alternadas (efeito zebra suave) */
-.table-row-cell:odd {
+.table-row-cell  {
     -fx-background-color: #FAF5F4;
 }
 
 /* Linha selecionada na tabela */
-.table-row-cell:filled:selected {
+.table-row-cell {
     -fx-background-color: #D8CFDB;
 }
 
-.table-row-cell:filled:selected .text {
+.table-row-cell, .text {
     -fx-fill: #3E3E3E;
     -fx-font-weight: bold;
 }
+
+.codigo-gerado {
+        -fx-text-fill:  #fcd7da;
+    }
+
+.codigo-gerado:hover {
+        -fx-text-fill: #fcd7da;
+    }
+
