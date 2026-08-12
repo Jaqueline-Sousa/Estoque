@@ -38,7 +38,7 @@
                <Insets />
             </StackPane.margin>
          </PasswordField>
-         <TextField fx:id="senhaVisivel" minHeight="45.0" promptText="Informe sua senha" managed="false"/>
+         <TextField fx:id="senhaVisivel" managed="false" minHeight="45.0" promptText="Informe sua senha" />
          <FontIcon fx:id="iconeOlho" iconColor="#0a0a0a" iconLiteral="mdi2e-eye-off-outline" iconSize="30" onMouseClicked="#aoVerSenha" StackPane.alignment="CENTER_RIGHT">
             <StackPane.margin>
                <Insets right="10.0" />
