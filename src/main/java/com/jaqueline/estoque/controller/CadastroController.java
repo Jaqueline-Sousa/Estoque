@@ -2,6 +2,7 @@ package com.jaqueline.estoque.controller;
 
 import com.jaqueline.estoque.model.Usuario;
 import com.jaqueline.estoque.model.UsuarioDAO;
+import com.jaqueline.estoque.util.Constantes;
 import com.jaqueline.estoque.util.GerenciadorTela;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,14 +38,19 @@ public class CadastroController {
 
     @FXML
     protected void aoConfirmarCadastro(ActionEvent event) throws IOException {
+
         String usuario = usuarioCadastrar.getText();
-        if (usuario.isBlank()) {
+
+
+
+        if (usuario.isBlank() || !usuario.matches(Constantes.REGEX_EMAIL.getValor()) ) {
             usuarioInvalido.setVisible(true);
             return;
-
         }
+
         String senha = senhaCadastrar.getText();
-        if (senha.isBlank()) {
+        if (senha.isBlank() || !senha.matches(Constantes.REGEX_SENHA.getValor())) {
+
             senhaInvalida.setVisible(true);
             return;
         }

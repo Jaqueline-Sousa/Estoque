@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 
 import java.io.IOException;
@@ -29,7 +30,21 @@ public class LoginController {
     @FXML
     private TextFlow erroDados;
 
-private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
+    @FXML
+    private TextField senhaVisivel;
+
+    @FXML
+    private FontIcon iconeOlho;
+
+    private boolean senhaVisivelAtiva = false;
+
+    private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
+
+    @FXML
+    public void initialize(){
+        senhaVisivel.textProperty().bindBidirectional(senha.textProperty());
+    }
+
     @FXML
     protected void aoApertarBotao(ActionEvent event) throws IOException {
 
@@ -48,7 +63,21 @@ private final UsuarioDAO bdUsuario = UsuarioDAO.getInstancia();
         }
 
     }
-        @FXML
+    @FXML
+    protected void aoVerSenha(){
+        senhaVisivelAtiva = !senhaVisivelAtiva;
+
+        senha.setVisible(!senhaVisivelAtiva);
+        senha.setManaged(!senhaVisivelAtiva);
+
+        senhaVisivel.setVisible(senhaVisivelAtiva);
+        senhaVisivel.setManaged(senhaVisivelAtiva);
+
+        iconeOlho.setIconLiteral(senhaVisivelAtiva ? "mdi2e-eye-outline" : "mdi2e-eye-off-outline");
+
+    }
+
+    @FXML
     protected void aoCadastrar(MouseEvent event) throws IOException{
             GerenciadorTela.getIntancia().trocarTela(event, "cadastro.fxml", "Sistema de Estoque - Login");
         }
